@@ -1,13 +1,13 @@
 # Display module - Elliott
 
-display = [] # To access given cell after filling, do display[y][x]
+display = list # To access given cell after filling, do display[y][x]
 dispx = 16
 dispy = 9
 blank_letter = "I"
 
 def wipe_display():
-    #display = []
-
+    global display # Global used b/c otherwise display is diff local var, and lin15 applies to loc var not glob var
+    display = []
     for i in range(dispy):
         new_arr = []
         for o in range(dispx):
@@ -33,12 +33,10 @@ def change_pixel(x:int, y:int, char:str):
     char = char[0] # Sets character to only first value
     
     display[y][x] = char + " " # Sets cell to character
+    # P.S. global does not have to be used b/c array inside array is basically global
 
 wipe_display()
-print_display()
 change_pixel(3,2,"A")
 print_display()
-
 wipe_display()
-
 print_display()

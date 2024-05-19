@@ -41,4 +41,26 @@ I I I I
 ```
 
 ## Variables
+```
+display = list
+dispx = 16
+dispy = 9
+blank_letter = "I"
+```
 
+display is the list containing all rows of the display. The
+pixels are stored as individual entries accessible by calling
+```display[y][x]```, where y and x range from 0 to dispy and dispx
+respectively. As well, the code makes use of how only first-tier objects
+(non-nested obj's) are immutable (unchangeable), while nested objects in
+a function are mutable (or smth like that; there's a whole lot of stuff
+to comprehend about this).
+
+dispx is the integer which defines how large the display is in the x
+dimension. It cannot be less than or equal to 0.
+
+dispy is the integer which defines how large the display is in the y
+dimension. It cannot be less than or equal to 0.
+
+blank_letter is a 1-length string which defines what value will be used
+as the default character of the display. It can only be 1 character long.
